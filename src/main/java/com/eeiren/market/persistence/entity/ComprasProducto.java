@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class ComprasProducto {
 
     @EmbeddedId
-    private ComprasProductoKT id;
+    private ComprasProductoPK id;
 
     private Integer cantidad;
     private Integer total;
@@ -16,18 +16,18 @@ public class ComprasProducto {
 
     @ManyToOne()
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
-    private ComprasProductoKT comprasProductoKT;
+    private Compra compra;
 
     @ManyToOne()
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
     private Producto producto;
 
 
-    public ComprasProductoKT getId() {
+    public ComprasProductoPK getId() {
         return id;
     }
 
-    public void setId(ComprasProductoKT id) {
+    public void setId(ComprasProductoPK id) {
         this.id = id;
     }
 
